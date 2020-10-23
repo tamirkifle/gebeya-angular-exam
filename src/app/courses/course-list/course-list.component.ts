@@ -16,8 +16,10 @@ export class CourseListComponent implements OnInit {
     this.courseService.getCourses().subscribe( courses => this.courses = courses);
   }
 
-  delete(course){
-    this.courseService.delete(course);
+  delete(courses){
+    this.courses = this.courses.filter(c => c !== courses);
+    this.courseService.delete(courses);
+    this.router.navigate(['/courses']);
   }
 
 }

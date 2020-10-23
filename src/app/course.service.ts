@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -10,6 +10,10 @@ import { Course } from './models/course';
 export class CourseService {
 
   coursesAPI = 'api/courses';
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   getCourses(): Observable<Course[]>{
@@ -29,7 +33,9 @@ export class CourseService {
     return this.http.post(this.coursesAPI, course);
   }
   delete(course){
-    return this.http.delete(this.coursesAPI, course);
+    const id = typeof course === 'number' ? course : course.id;
+    const url = `${this.coursesAPI}/${id}`;
 
+    return this.http.delete<Course>(url, this.httpOptions);
   }
 }

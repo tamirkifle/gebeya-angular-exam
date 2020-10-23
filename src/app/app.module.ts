@@ -17,12 +17,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     AuthModule,
     StudentsModule,
     CoursesModule,
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

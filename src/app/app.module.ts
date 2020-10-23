@@ -13,11 +13,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { FakeApiService } from './fake-api.service';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

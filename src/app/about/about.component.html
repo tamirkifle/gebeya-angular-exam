@@ -1,0 +1,41 @@
+<h1>Our Company</h1>
+<p>Company Details
+</p>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<mat-card>
+    <mat-card-title>Contact Us</mat-card-title>
+<mat-card-content>
+<form (ngSubmit)="submit()">
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Name">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Email">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <textarea matInput placeholder="Message"></textarea>
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>
+
+  <div class="button">
+    <button type="submit" mat-button>Send Message</button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>

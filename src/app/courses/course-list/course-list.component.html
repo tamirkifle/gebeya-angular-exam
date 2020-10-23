@@ -1,1 +1,10 @@
-<p>course-list works!</p>
+<mat-list style="margin: 2rem;">
+    <h3 class="mat-display-1">Course List</h3>
+    <mat-list-item *ngFor="let course of courses" style="border: 1px solid grey;cursor: pointer">
+        <h4 matLine>{{course.course_name}}</h4>
+        <p matLine> {{course.university}} </p>
+        <span class="spacer"></span>
+        <button mat-button routerLink="/login">Edit</button>
+        <button mat-button routerLink="/register">Delete</button>
+    </mat-list-item>
+</mat-list>

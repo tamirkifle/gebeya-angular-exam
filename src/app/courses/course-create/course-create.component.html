@@ -1,16 +1,16 @@
 <mat-card>
-    <mat-card-title>Create Student</mat-card-title>
+    <mat-card-title>Create Course</mat-card-title>
 <mat-card-content>
 <form (ngSubmit)="submit()">
   <p>
     <mat-form-field>
-      <input type="text" matInput placeholder="First Name" name="first_name" [(ngModel)]="newStudent.first_name">
+      <input type="text" matInput placeholder="Course Name" name="first_name" [(ngModel)]="newCourse.course_name">
     </mat-form-field>
   </p>
 
   <p>
     <mat-form-field>
-      <input type="text" matInput placeholder="Last Name" name="last_name" [(ngModel)]="newStudent.last_name">
+      <input type="text" matInput placeholder="University" name="last_name" [(ngModel)]="newCourse.university">
     </mat-form-field>
   </p>
 

@@ -1,5 +1,7 @@
 <mat-list style="margin: 2rem;">
     <h3 class="mat-display-1">Course List</h3>
+    <button mat-raised-button [routerLink]="['create']" color="primary">Create Course</button>
+
     <mat-list-item *ngFor="let course of courses" style="border: 1px solid grey;cursor: pointer" [routerLink]="['detail',course.id]">
         <h4 matLine>{{course.course_name}}</h4>
         <p matLine> {{course.university}} </p>

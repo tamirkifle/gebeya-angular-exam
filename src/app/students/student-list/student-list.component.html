@@ -1,6 +1,6 @@
 <mat-list style="margin: 2rem;">
     <h3 class="mat-display-1">Student List</h3>
-    <button mat-button [routerLink]="['create']">Create Student</button>
+    <button mat-raised-button [routerLink]="['create']" color="primary">Create Student</button>
 
     <mat-list-item *ngFor="let student of students" style="border: 1px solid grey;cursor: pointer" [routerLink]="['detail',student.id]">
         <h4 matLine>{{student.first_name}} {{student.last_name}}</h4>

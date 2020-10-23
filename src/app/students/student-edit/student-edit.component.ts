@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Student } from 'src/app/models/student';
 import { StudentService } from 'src/app/student.service';
 
@@ -12,7 +12,7 @@ export class StudentEditComponent implements OnInit {
   error: false;
   student: Student;
   
-  constructor(private studentService: StudentService, private route: ActivatedRoute) { }
+  constructor(private studentService: StudentService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.getStudent();
@@ -28,6 +28,8 @@ export class StudentEditComponent implements OnInit {
   }
   
   submit(){
-
+    this.studentService.updateStudent(this.student).subscribe(r => {
+      this.router.navigate(["/students"]);
+    });
   }
 }

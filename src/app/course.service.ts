@@ -20,4 +20,12 @@ export class CourseService {
     const url = `${this.coursesAPI}/${id}`;
     return this.http.get<Course>(url);
   }
+
+  updateCourse(course){
+    return this.http.put(this.coursesAPI, course);
+  }
+
+  saveCourse(course){
+    return this.http.post(this.coursesAPI, course);
+  }
 }

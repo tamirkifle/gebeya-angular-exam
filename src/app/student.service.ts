@@ -19,4 +19,12 @@ export class StudentService {
     const url = `${this.studentsAPI}/${id}`;
     return this.http.get<Student>(url);
   }
+
+  updateStudent(student){
+    return this.http.put(this.studentsAPI, student);
+  }
+
+  saveStudent(student){
+    return this.http.post(this.studentsAPI, student);
+  }
 }

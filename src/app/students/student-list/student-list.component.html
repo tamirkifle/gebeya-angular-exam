@@ -5,7 +5,10 @@
         <p matLine> {{student.gender}} </p>
         <p matLine> {{student.email}} </p>
         <span class="spacer"></span>
-        <button mat-button routerLink="edit">Edit</button>
-        <button mat-button>Delete</button>
+        <!-- <div style="position: relative; z-index: 1000">
+            <button mat-button routerLink="['detail', student.id, 'edit']">Edit</button>
+            <button mat-button>Delete</button>
+        </div> -->
+        
     </mat-list-item>
 </mat-list>

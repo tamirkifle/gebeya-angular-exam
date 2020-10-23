@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CourseService } from 'src/app/course.service';
 import { Course } from 'src/app/models/course';
 
@@ -11,7 +11,7 @@ import { Course } from 'src/app/models/course';
 export class CourseEditComponent implements OnInit {
   course: Course;
   error: false;
-  constructor(private courseService: CourseService, private route: ActivatedRoute) { }
+  constructor(private courseService: CourseService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.getCourse();
@@ -24,7 +24,9 @@ export class CourseEditComponent implements OnInit {
   }
 
   submit(){
-    
+    this.courseService.updateCourse(this.course).subscribe(r => {
+      this.router.navigate(["/courses"]);
+    });
   }
 
 

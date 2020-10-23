@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { StudentEditComponent } from './student-edit/student-edit.component';
+import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
   {
     path: 'students',
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

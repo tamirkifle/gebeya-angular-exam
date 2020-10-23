@@ -1,4 +1,5 @@
-<h1 style="margin: 2rem"><span>Welcome, please </span>
-    <span *ngIf="!authService.isLoggedIn">login</span>
-     <span *ngIf="authService.isLoggedIn">navigate</span>
+<h1 style="margin: 2rem">
+    <span>Welcome </span>
+    <span *ngIf="!authService.isLoggedIn">please login or check out our about page to contact us</span>
+     <span *ngIf="authService.isLoggedIn">User, You are now logged in. Feel free to navigate!</span>
 </h1>

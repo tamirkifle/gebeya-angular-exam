@@ -27,4 +27,8 @@ export class StudentService {
   saveStudent(student){
     return this.http.post(this.studentsAPI, student);
   }
+
+  delete(student){
+    return this.http.delete(this.studentsAPI, student);
+  }
 }

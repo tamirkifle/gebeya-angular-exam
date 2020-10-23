@@ -28,4 +28,8 @@ export class CourseService {
   saveCourse(course){
     return this.http.post(this.coursesAPI, course);
   }
+  delete(course){
+    return this.http.delete(this.coursesAPI, course);
+
+  }
 }

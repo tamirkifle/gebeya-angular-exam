@@ -4,7 +4,7 @@
         <h4 matLine>{{course.course_name}}</h4>
         <p matLine> {{course.university}} </p>
         <span class="spacer"></span>
-        <button mat-button routerLink="/login">Edit</button>
+        <button mat-button [routerLink]="['/courses/detail', course.id, 'edit']">Edit</button>
         <button mat-button routerLink="/register">Delete</button>
     </mat-list-item>
 </mat-list>

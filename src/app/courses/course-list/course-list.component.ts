@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Course } from 'src/app/models/course';
 import { CourseService } from '../../course.service';
 
@@ -9,10 +10,14 @@ import { CourseService } from '../../course.service';
 })
 export class CourseListComponent implements OnInit {
   courses: Course[];
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService, private router: Router) { }
 
   ngOnInit(): void {
     this.courseService.getCourses().subscribe( courses => this.courses = courses);
+  }
+
+  delete(course){
+    this.courseService.delete(course);
   }
 
 }

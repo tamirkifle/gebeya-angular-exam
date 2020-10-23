@@ -27,7 +27,7 @@ export class FakeApiService implements InMemoryDbService {
       { id: 15, first_name: "Waring", last_name: "Le Gallo", email: "wlegalloe@eventbrite.com", gender: "Male" },
     ];
 
-    const courses = [
+    const courses: Course[] = [
         {id: 1, course_name: "Human Resources", university: "Southern Cross University"},
         {id: 2, course_name: "Human Resources", university: "Tokai Women's College"},
         {id: 3, course_name: "Human Resources", university: "Universidad Chapultepéc"},
@@ -47,7 +47,7 @@ export class FakeApiService implements InMemoryDbService {
     return { students, courses};
   }
 
-  genId(item: any[]): number {
+  genId(item): number {
     return item.length > 0 ? Math.max(...item.map(it => it.id)) + 1 : 1;
   }
 }

@@ -1,1 +1,11 @@
-<p>student-list works!</p>
+<mat-list style="margin: 2rem;">
+    <h3 class="mat-display-1">Student List</h3>
+    <mat-list-item *ngFor="let student of students" style="border: 1px solid grey;cursor: pointer" [routerLink]="['detail',student.id]">
+        <h4 matLine>{{student.first_name}} {{student.last_name}}</h4>
+        <p matLine> {{student.gender}} </p>
+        <p matLine> {{student.email}} </p>
+        <span class="spacer"></span>
+        <button mat-button routerLink="edit">Edit</button>
+        <button mat-button>Delete</button>
+    </mat-list-item>
+</mat-list>

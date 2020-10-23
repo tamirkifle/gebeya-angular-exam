@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-title>Edit Course</mat-card-title>
+<mat-card-content>
+<form (ngSubmit)="submit()" *ngIf="course">
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Course Name" name="first_name" [(ngModel)]="course.course_name">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="University" name="last_name" [(ngModel)]="course.university">
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>
+
+  <div class="button">
+    <button type="submit" mat-button>Save</button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>

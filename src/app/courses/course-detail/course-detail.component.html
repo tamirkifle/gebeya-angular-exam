@@ -1,1 +1,13 @@
-<p>course-detail works!</p>
+<mat-list style="margin: 2rem;">
+    <h3 class="mat-display-1">Course Detail</h3>
+    <mat-list-item>
+        <h4 matLine>Course Name: {{course.course_name}}</h4>
+    </mat-list-item>
+    <mat-list-item>
+        <h4 matLine>University: {{course.university}}</h4>
+    </mat-list-item>
+    <mat-list-item>
+        <button mat-button routerLink="edit">Edit</button>
+        <button mat-button>Delete</button>
+    </mat-list-item>
+</mat-list>

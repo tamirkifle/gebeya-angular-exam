@@ -17,7 +17,7 @@ import { FakeApiService } from './fake-api.service';
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
